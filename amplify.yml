@@ -5,15 +5,15 @@ frontend:
       commands:
         - nvm install 20.17.0
         - nvm use 20.17.0
-        - npm i
+        - npm ci
         - npm install -g @angular/cli
     build:
       commands:
-        - ng build
+        - ng build --prod
   artifacts:
-    baseDirectory: dist/portfolio/browser
+    baseDirectory: dist/portfolio
     files:
-      - "*/"
+      - "**/*"
   cache:
     paths:
-      - node_modules/*/
+      - node_modules/
